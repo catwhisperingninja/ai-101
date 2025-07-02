@@ -1,7 +1,7 @@
 [project]
 name = "pyterminus-package-mage"
 version = "0.1.0"
-description = "Learning Python package magic"
+description = "Learning Python magic"
 authors = [
     {name = "catwhisperingninja"}
 ]
