@@ -8,7 +8,7 @@ import platform
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def type_text(text, delay=0.03):
+def type_text(text, delay=0.021):
     for char in text:
         print(char, end='', flush=True)
         time.sleep(delay)
@@ -120,10 +120,18 @@ print(pyfiglet.figlet_format("Magic"))
     wait_for_enter()
     
     # Try to run it (will fail)
-    type_text("\n🎯 Let's try casting this spell...\n")
-    type_text("Running: python3 simple_scroll.py\n")
+    type_text("\n🎯 Let's try casting this spell the RIGHT way...")
+    type_text("Type 'poetry run python simple_scroll.py' to run the script.")
+    type_text("(Always use 'poetry run' for proper environment isolation)")
     
-    result = subprocess.run([sys.executable, 'simple_scroll.py'], capture_output=True, text=True)
+    while True:
+        user_cmd = input("\n$ ").strip()
+        if user_cmd == "poetry run python simple_scroll.py":
+            result = subprocess.run(['poetry', 'run', 'python', 'simple_scroll.py'], capture_output=True, text=True)
+            break
+        else:
+            type_text("\nAh, the command typo curse strikes again!")
+            type_text("Type exactly: poetry run python simple_scroll.py")
     
     if result.returncode != 0:
         type_text("💥 The spell fails!\n")
@@ -147,29 +155,54 @@ print(pyfiglet.figlet_format("Magic"))
     type_text("\n📚 First, we consecrate this space as a Poetry project:\n")
     
     if not os.path.exists('pyproject.toml'):
-        type_text("Running: poetry init --no-interaction\n")
-        subprocess.run(['poetry', 'init', '--no-interaction'])
-        type_text("\n✅ Poetry project initialized!")
+        type_text("Type 'poetry init --no-interaction' to create a project quickly.")
+        type_text("(The --no-interaction flag uses default settings)")
+        
+        while True:
+            user_cmd = input("\n$ ").strip()
+            if user_cmd == "poetry init --no-interaction":
+                subprocess.run(['poetry', 'init', '--no-interaction'])
+                type_text("\n✅ Poetry project initialized!")
+                break
+            else:
+                type_text("\nExact precision needed for the spell!")
+                type_text("Type: poetry init --no-interaction")
     else:
         type_text("✅ Poetry project already exists!")
     
     wait_for_enter()
     
     # Add pyfiglet
-    type_text("\n🔮 Now, let's add the magical component (pyfiglet):\n")
-    type_text("Running: poetry add pyfiglet\n")
+    type_text("\n🔮 Now, let's add the magical component (pyfiglet):")
+    type_text("Type 'poetry add pyfiglet' to install your first package.")
+    type_text("(This is how Poetry manages external libraries)")
     
-    subprocess.run(['poetry', 'add', 'pyfiglet'])
+    while True:
+        user_cmd = input("\n$ ").strip()
+        if user_cmd == "poetry add pyfiglet":
+            subprocess.run(['poetry', 'add', 'pyfiglet'])
+            break
+        else:
+            type_text("\nThe spell requires precision!")
+            type_text("Type exactly: poetry add pyfiglet")
     
     type_text("\n✅ The pyfiglet magic has been added to your tome!")
     
     wait_for_enter()
     
     # Run with Poetry
-    type_text("\n✨ Now, let's cast the spell properly with Poetry:\n")
-    type_text("Running: poetry run python simple_scroll.py\n")
+    type_text("\n✨ Now, let's cast the spell properly with Poetry:")
+    type_text("Type 'poetry run python simple_scroll.py' to run in Poetry's realm.")
+    type_text("(The 'poetry run' prefix uses Poetry's isolated environment)")
     
-    subprocess.run(['poetry', 'run', 'python', 'simple_scroll.py'])
+    while True:
+        user_cmd = input("\n$ ").strip()
+        if user_cmd == "poetry run python simple_scroll.py":
+            subprocess.run(['poetry', 'run', 'python', 'simple_scroll.py'])
+            break
+        else:
+            type_text("\nPoetry requires the exact incantation!")
+            type_text("Type: poetry run python simple_scroll.py")
     
     type_text("\n🎉 SUCCESS! The spell works perfectly!")
     
@@ -181,16 +214,18 @@ print(pyfiglet.figlet_format("Magic"))
     type_text("You have learned the first lesson of the Poetry Tome:")
     type_text("- ✅ How to initialize a Poetry project")
     type_text("- ✅ How to add magical components (packages)")
-    type_text("- ✅ How to cast spells in an isolated realm\n")
+    type_text("- ✅ How to cast spells in an isolated realm")
+    type_text("- ⚠️  ALWAYS use 'poetry run python' - never just 'python'!\n")
     
     type_text("📖 Your journey continues in the full tutorial!")
     type_text("   Read: PyTerminus_PackageMage_Adventure.md\n")
     
-    type_text("🎮 Want to see the advanced spells?")
-    response = input("   Type 'yes' to run the complete example: ").lower()
+    type_text("🎮 Want to begin the full adventure?")
+    response = input("   Type 'yes' to start the complete journey: ").lower()
     
     if response == 'yes':
-        type_text("\n🌟 Running the master spell...\n")
+        type_text("\n🌟 Launching the Package Mage's Adventure...\n")
+        time.sleep(1)
         subprocess.run(['poetry', 'run', 'python', 'scroll.py'])
     
     type_text("\n🧙‍♂️ May your code be bug-free and your dependencies always resolve!")
