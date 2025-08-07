@@ -122,12 +122,8 @@ poetry run fastapi dev main.py
 
 ### Expected Terminal Output
 
-[pic]
+![Uploading Screenshot 2025-08-07 at 12.58.54.png…]()
 
-╭────────── FastAPI CLI - Development mode ───────────╮ │ │ │ Serving at:
-http://127.0.0.1:8000 │ │ │ │ API docs: http://127.0.0.1:8000/docs │ │ │ │
-Running in development mode, for production use: │ │ │ │ fastapi run │ │ │
-╰─────────────────────────────────────────────────────╯
 
 INFO: Will watch for changes in these directories:
 ['/home/user/code/awesomeapp'] INFO: Uvicorn running on http://127.0.0.1:8000
