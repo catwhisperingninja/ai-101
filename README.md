@@ -43,15 +43,6 @@ The key features are:
 
 ## Requirements - This Repo Branch Is Designed For Poetry-Only.
 
-FastAPI stands on the shoulders of giants:
-
-- <a href="https://www.starlette.io/" class="external-link" target="_blank">Starlette</a>
-  for the web parts.
-- <a href="https://docs.pydantic.dev/" class="external-link" target="_blank">Pydantic</a>
-  for the data parts.
-
-## Installation
-
 ```zsh
 poetry lock
 poetry install
@@ -124,9 +115,6 @@ poetry run fastapi dev main.py
 
 ![FastAPI development server example](serverterminaloutput.png)
 
-
-````
-
 </div>
 
 <details markdown="1">
@@ -154,7 +142,7 @@ You will see the JSON response as:
 
 ```JSON
 {"item_id": 5, "q": "somequery"}
-````
+```
 
 You already created an API that:
 
