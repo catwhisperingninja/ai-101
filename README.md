@@ -122,8 +122,7 @@ poetry run fastapi dev main.py
 
 ### Expected Terminal Output
 
-
-
+![FastAPI development server example](./serverterminaloutput.png)
 
 
 ````
