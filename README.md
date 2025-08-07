@@ -1,4 +1,7 @@
-# This Is Not the Official FastAPI. It has been heavily simplified for a class.
+# This Is Not the Official FastAPI.
+
+It has been heavily simplified for a class. It is not designed for main branch
+merge.
 
 **Documentation**:
 <a href="https://fastapi.tiangolo.com" target="_blank">https://fastapi.tiangolo.com</a>
